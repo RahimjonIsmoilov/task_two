@@ -45,20 +45,24 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     MenuItem(
-                      title: "Rahimjon",
-                      iconPath: "images/Promo.png",
+                      title: "Promos",
+                      iconPath: "images/icon1.png",
+                      colorey: Colors.green,
                     ),
                     MenuItem(
-                      title: "Order",
+                      title: "Rahimjon",
                       iconPath: "images/Order.png",
+                      colorey: Colors.green,
                     ),
                     MenuItem(
                       title: "Delivery",
-                      iconPath: "images/Delivery.png",
+                      iconPath: "images/Shape 3.png",
+                      colorey: Colors.orange,
                     ),
                     MenuItem(
                       title: "Account",
-                      iconPath: "images/Account.png",
+                      iconPath: "images/Shape 2.png",
+                      colorey: Colors.purple,
                     ),
                   ],
                 ),
@@ -66,9 +70,10 @@ class MyApp extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 12),
                 child: NotificationItem(
-                    deliviconpath: 'images/Delivery.png',
+                    deliviconpath: 'images/Shape 3.png',
                     orderarriv: 'Order Arrived',
                     text2: '12:35 PM',
+                    cols: Colors.orange,
                     longtext:
                         'Order #567896 has been competed & arrived at the destination addres.'),
               ),
@@ -76,18 +81,21 @@ class MyApp extends StatelessWidget {
                   deliviconpath: 'images/Order.png',
                   orderarriv: 'Order Success',
                   text2: 'Yesterday',
+                  cols: Colors.blue,
                   longtext:
                       'Order #567896 has been success. Please wait for the product to be sent.'),
               NotificationItem(
-                  deliviconpath: 'images/Promo.png',
+                  deliviconpath: 'images/icon1.png',
                   orderarriv: '40% Discount on Beko',
                   text2: '24 July, 2024',
+                  cols: Colors.green,
                   longtext:
                       'All of the Beko products available with 40% exclusive discount.'),
               NotificationItem(
-                  deliviconpath: 'images/Account.png',
+                  deliviconpath: 'images/Shape 2.png',
                   orderarriv: 'Address Upadated',
                   text2: '20 July, 2024',
+                  cols: Colors.purple,
                   longtext:
                       'Your payment and shipping address has been updated successfully.'),
             ],
