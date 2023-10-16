@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_two/widgets/menu_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,113 +42,26 @@ class MyApp extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    MenuItem(),
-                    Column(
-                      children: [
-                        Image(
-                          image: AssetImage('images/Order.png'),
-                          width: 48,
-                          height: 48,
-                          alignment: Alignment.center,
-                        ),
-                        Text(
-                          'Order',
-                          style: TextStyle(
-                            fontSize: 13,
-                          ),
-                        )
-                      ],
+                    MenuItem(
+                      title: "Rahimjon",
+                      iconPath: "images/Promo.png",
                     ),
-                    Column(
-                      children: [
-                        Image(
-                          image: AssetImage('images/Delivery.png'),
-                          width: 48,
-                          height: 48,
-                          alignment: Alignment.center,
-                        ),
-                        Text(
-                          'Delivery',
-                          style: TextStyle(
-                            fontSize: 13,
-                          ),
-                        )
-                      ],
+                    MenuItem(
+                      title: "Order",
+                      iconPath: "images/Order.png",
                     ),
-                    Column(
-                      children: [
-                        Image(
-                          image: AssetImage('images/Account.png'),
-                          width: 48,
-                          height: 48,
-                          alignment: Alignment.center,
-                        ),
-                        Text(
-                          'Account',
-                          style: TextStyle(
-                            fontSize: 13,
-                          ),
-                        )
-                      ],
+                    MenuItem(
+                      title: "Delivery",
+                      iconPath: "images/Delivery.png",
+                    ),
+                    MenuItem(
+                      title: "Account",
+                      iconPath: "images/Account.png",
                     ),
                   ],
                 ),
               ),
-              Container(
-                margin: const EdgeInsets.only(top: 24),
-                height: 116,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      width: 1.0,
-                      color: Colors.black12,
-                    )),
-                child: const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 12, left: 20),
-                      child: Image(image: AssetImage('images/Delivery.png')),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 16, top: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Order Arrived',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            '12:35 PM',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8),
-                            child: SizedBox(
-                              width: 279,
-                              height: 44,
-                              child: Text(
-                                'Order #567896 has been completed & arrived at the destination address.',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              NotificationItem(),
               Container(
                 margin: const EdgeInsets.only(top: 12),
                 height: 116,
@@ -390,28 +304,66 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MenuItem extends StatelessWidget {
-  const MenuItem({
+class NotificationItem extends StatelessWidget {
+  const NotificationItem({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Image(
-          image: AssetImage('images/Promo.png'),
-          width: 48,
-          height: 48,
-          alignment: Alignment.center,
-        ),
-        Text(
-          'Promos',
-          style: TextStyle(
-            fontSize: 13,
+    return Container(
+      margin: const EdgeInsets.only(top: 24),
+      height: 116,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+            width: 1.0,
+            color: Colors.black12,
+          )),
+      child: const Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(top: 12, left: 20),
+            child: Image(image: AssetImage('images/Delivery.png')),
           ),
-        )
-      ],
+          Padding(
+            padding: EdgeInsets.only(left: 16, top: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Order Arrived',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  '12:35 PM',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 8),
+                  child: SizedBox(
+                    width: 279,
+                    height: 44,
+                    child: Text(
+                      'Order #567896 has been completed & arrived at the destination address.',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
